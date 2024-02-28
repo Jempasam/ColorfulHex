@@ -6,9 +6,11 @@ It add more pigment related stuffs.
 # Pigmented Grid
 Your current pigment color now affect your casting grid.
 Wow, that's cool. So colorful!
+
 ![Colored grid](https://github.com/Jempasam/ColorfulHex/blob/master/imgs/color.png?raw=true)
 # Pigmented Hat
 Your current pigment color now affect your hat.
+
 ![Colored hat](https://github.com/Jempasam/ColorfulHex/blob/master/imgs/coloredhat1.png?raw=true)
 
 Wow that's cool. So colorful!
