@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " O ",
+    "#O#",
+    "OOO"
+  ],
+  "key": {
+    "#": {
+      "item": "hexcasting:dye_colorizer_white"
+    },
+    "O": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "result": {
+    "item": "colorfulhex:magician_hat",
+    "count": 1
+  }
+}

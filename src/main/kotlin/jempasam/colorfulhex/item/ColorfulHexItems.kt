@@ -1,11 +1,12 @@
 package jempasam.colorfulhex.item
 
+import at.petrak.hexcasting.xplat.IXplatAbstractions
 import jempasam.colorfulhex.ColorfulHexMod
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.entity.EquipmentSlot
 import net.minecraft.item.ArmorItem
 import net.minecraft.item.ArmorMaterials
 import net.minecraft.item.Item
-import net.minecraft.item.ItemGroup
 import net.minecraft.util.registry.Registry
 
 object ColorfulHexItems {
@@ -15,5 +16,5 @@ object ColorfulHexItems {
         return item
     }
 
-    val magicianHat= register("magician_hat", ArmorItem(ArmorMaterials.LEATHER, EquipmentSlot.HEAD, Item.Settings().group(ItemGroup.COMBAT)))
+    val magicianHat= register("magician_hat", ArmorItem(ArmorMaterials.LEATHER, EquipmentSlot.HEAD, FabricItemSettings().group(IXplatAbstractions.INSTANCE.tab)))
 }
