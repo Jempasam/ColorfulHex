@@ -1,5 +1,8 @@
-# Colorful Hex
-Add more pigment related stuffs.
+
+![Colorful Hex Title](imgs/title.png)
+# What ?
+It add more pigment related stuffs.
+
 # Pigmented Grid
 Your current pigment color now affect your casting grid.
 Wow, that's cool. So colorful!
