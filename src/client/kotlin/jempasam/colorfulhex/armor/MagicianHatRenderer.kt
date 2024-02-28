@@ -1,5 +1,6 @@
 package jempasam.colorfulhex.armor
 
+import at.petrak.hexcasting.api.misc.FrozenColorizer
 import at.petrak.hexcasting.xplat.IXplatAbstractions
 import jempasam.colorfulhex.ColorfulHexMod
 import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer
@@ -24,9 +25,10 @@ class MagicianHatRenderer: ArmorRenderer {
         if(slot!=EquipmentSlot.HEAD)return
 
         val player=entity
-        if(player !is PlayerEntity)return
+        val colorizer=
+            if(player is PlayerEntity)IXplatAbstractions.INSTANCE.getColorizer(player)
+            else FrozenColorizer.DEFAULT.get()
 
-        val colorizer=IXplatAbstractions.INSTANCE.getColorizer(player)
         val color=colorizer.getColor(entity.age.toFloat()*3,entity.pos.multiply(0.1))
         val color2=colorizer.getColor((entity.age.toFloat()+15)*3,entity.pos.multiply(0.1))
         val color3=colorizer.getColor((entity.age.toFloat()+30)*3,entity.pos.multiply(0.1))
