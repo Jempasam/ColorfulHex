@@ -1,6 +1,7 @@
 package jempasam.colorfulhex
 
 import jempasam.colorfulhex.item.ColorfulHexItems
+import jempasam.colorfulhex.recipe.ColorfulHexRecipes
 import net.fabricmc.api.ModInitializer
 import net.minecraft.util.Identifier
 import org.slf4j.LoggerFactory
@@ -14,5 +15,7 @@ object ColorfulHexMod : ModInitializer {
 	override fun onInitialize() {
 		logger.info("Colorful hex start!")
 		ColorfulHexItems
+		ColorfulHexRecipes
 	}
+
 }

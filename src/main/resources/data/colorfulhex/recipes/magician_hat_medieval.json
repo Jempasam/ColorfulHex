@@ -1,8 +1,8 @@
 {
   "type": "colorfulhex:hat_shaped",
   "pattern": [
-    "O  ",
-    " O#",
+    " O ",
+    "O#O",
     "OOO"
   ],
   "key": {
@@ -17,5 +17,5 @@
     "item": "colorfulhex:magician_hat",
     "count": 1
   },
-  "model": 0
+  "model": 3
 }

@@ -1,0 +1,31 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_wool": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:white_wool"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wool"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "colorfulhex:magician_hat",
+      "colorfulhex:magician_hat_high",
+      "colorfulhex:magician_hat_lutin",
+      "colorfulhex:magician_hat_medieval",
+      "colorfulhex:magician_hat_round"
+    ]
+  }
+}
