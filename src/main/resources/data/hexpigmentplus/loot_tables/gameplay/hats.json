@@ -1,0 +1,66 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "entries": [
+
+        {
+          "type": "minecraft:item",
+          "name": "hexpigmentplus:magician_hat",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+                "tag": "{CustomModelData:0}"
+            }
+          ]
+        },
+
+        {
+          "type": "minecraft:item",
+          "name": "hexpigmentplus:magician_hat",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{CustomModelData:1}"
+            }
+          ]
+        },
+
+        {
+          "type": "minecraft:item",
+          "name": "hexpigmentplus:magician_hat",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{CustomModelData:2}"
+            }
+          ]
+        },
+
+        {
+          "type": "minecraft:item",
+          "name": "hexpigmentplus:magician_hat",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{CustomModelData:3}"
+            }
+          ]
+        },
+
+        {
+          "type": "minecraft:item",
+          "name": "hexpigmentplus:magician_hat",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{CustomModelData:4}"
+            }
+          ]
+        }
+
+      ]
+    }
+  ]
+}

@@ -62,7 +62,7 @@ loom {
     splitEnvironmentSourceSets()
 
 	mods {
-		"colorfulhex" {
+		"hexpigmentplus" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}

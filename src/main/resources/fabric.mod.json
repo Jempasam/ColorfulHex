@@ -1,8 +1,8 @@
 {
 	"schemaVersion": 1,
-	"id": "colorfulhex",
+	"id": "hexpigmentplus",
 	"version": "${version}",
-	"name": "Colorful Hex",
+	"name": "Hex Pigment Plus",
 	"description": "Hex casting cool addon with colors.",
 	"authors": [
 		"jempasam"
@@ -14,26 +14,26 @@
 		"jempasam"
 	],
 	"license": "MIT",
-	"icon": "assets/colorfulhex/icon.png",
+	"icon": "assets/hexpigmentplus/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			{
-				"value": "jempasam.colorfulhex.ColorfulHexMod",
+				"value": "jempasam.hexpigmentplus.HPPMod",
 				"adapter": "kotlin"
 			}
 		],
 		"client": [
 			{
-				"value": "jempasam.colorfulhex.ColorfulHexClientMod",
+				"value": "jempasam.hexpigmentplus.HPPClientMod",
 				"adapter": "kotlin"
 			}
 		]
 	},
 	"mixins": [
-		"colorfulhex.mixins.json",
+		"hexpigmentplus.mixins.json",
 		{
-			"config": "colorfulhex.client.mixins.json",
+			"config": "hexpigmentplus.client.mixins.json",
 			"environment": "client"
 		}
 	],
