@@ -1,15 +1,14 @@
 package jempasam.hexpigmentplus.item
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
-import net.minecraft.entity.EquipmentSlot
 import net.minecraft.item.ArmorItem
 import net.minecraft.item.ArmorMaterial
 import net.minecraft.item.ArmorMaterials
 import net.minecraft.recipe.Ingredient
+import net.minecraft.registry.tag.ItemTags
 import net.minecraft.sound.SoundEvents
-import net.minecraft.tag.ItemTags
 
-class HatItem(settings: FabricItemSettings): ArmorItem(Material, EquipmentSlot.HEAD, settings){
+class HatItem(settings: FabricItemSettings): ArmorItem(Material, Type.HELMET, settings){
 
     object Material: ArmorMaterial{
         override fun getEnchantability() = ArmorMaterials.GOLD.enchantability
@@ -18,13 +17,13 @@ class HatItem(settings: FabricItemSettings): ArmorItem(Material, EquipmentSlot.H
 
         override fun getName() = "hat"
 
-        override fun getProtectionAmount(slot: EquipmentSlot) = ArmorMaterials.LEATHER.getProtectionAmount(slot)
+        override fun getProtection(slot: Type) = ArmorMaterials.LEATHER.getProtection(slot)
 
         override fun getToughness() = ArmorMaterials.LEATHER.toughness
 
         override fun getRepairIngredient() = Ingredient.fromTag(ItemTags.WOOL)
 
-        override fun getDurability(slot: EquipmentSlot) = ArmorMaterials.LEATHER.getDurability(slot)
+        override fun getDurability(slot: Type) = ArmorMaterials.LEATHER.getDurability(slot)
 
         override fun getKnockbackResistance() = ArmorMaterials.LEATHER.knockbackResistance
     }

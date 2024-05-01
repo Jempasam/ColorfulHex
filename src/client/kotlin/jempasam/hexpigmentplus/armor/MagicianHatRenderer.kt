@@ -1,6 +1,6 @@
 package jempasam.hexpigmentplus.armor
 
-import at.petrak.hexcasting.api.misc.FrozenColorizer
+import at.petrak.hexcasting.api.pigment.FrozenPigment
 import at.petrak.hexcasting.xplat.IXplatAbstractions
 import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer
 import net.minecraft.client.MinecraftClient
@@ -17,8 +17,8 @@ import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.ItemStack
 import net.minecraft.util.DyeColor
 import net.minecraft.util.math.ColorHelper
-import net.minecraft.util.math.Quaternion
 import net.minecraft.util.math.random.Random
+import org.joml.Quaternionf
 
 
 class MagicianHatRenderer: ArmorRenderer {
@@ -37,8 +37,8 @@ class MagicianHatRenderer: ArmorRenderer {
 
         val player=entity
         val colorizer=
-            if(player is PlayerEntity)IXplatAbstractions.INSTANCE.getColorizer(player)
-            else FrozenColorizer.DEFAULT.get()
+            if(player is PlayerEntity)IXplatAbstractions.INSTANCE.getPigment(player).colorProvider
+            else FrozenPigment.DEFAULT.get().colorProvider
 
         val color=colorizer.getColor(entity.age.toFloat()*3,entity.pos.multiply(0.1))
         val color2=colorizer.getColor((entity.age.toFloat()+15)*3,entity.pos.multiply(0.1))
@@ -49,19 +49,17 @@ class MagicianHatRenderer: ArmorRenderer {
         val vertexs = ItemRenderer.getArmorGlintConsumer(
             buffer, RenderLayer.getArmorCutoutNoCull(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE), false, stack.hasGlint()
         )
-
         matrices.push()
-        matrices.multiply(Quaternion.fromEulerXyz(contextModel.head.roll, contextModel.head.yaw+Math.PI.toFloat()/2f, contextModel.head.pitch))
-        matrices.multiply(Quaternion.fromEulerXyz(Math.PI.toFloat(), -Math.PI.toFloat()/2f, 0f))
+        matrices.multiply(Quaternionf().rotateZYX(contextModel.head.roll, contextModel.head.yaw, contextModel.head.pitch))
+        matrices.multiply(Quaternionf().rotateZYX(Math.PI.toFloat(), -Math.PI.toFloat()/2f, 0f))
         matrices.scale(0.65f, 0.65f, 0.65f)
-        matrices.translate(-.5, 0.0, -.5)
+        matrices.translate(-.8, -.6, -.5)
 
-
-        matrices.translate(translation.x.toDouble(), translation.y.toDouble(), translation.z.toDouble())
         matrices.translate(0.5, 0.5, 0.5)
         matrices.scale(scale.x, scale.y, scale.z)
-        matrices.multiply(Quaternion.fromEulerXyz(rotation.x-Math.PI.toFloat()/2f, rotation.y, rotation.z))
+        matrices.multiply(Quaternionf().rotateZYX(-rotation.x+Math.PI.toFloat()/2, rotation.y+Math.PI.toFloat()/2, rotation.z))
         matrices.translate(-0.5, -0.5, -0.5)
+        matrices.translate(translation.x.toDouble(), translation.y.toDouble(), translation.z.toDouble())
         val matrix=matrices.peek()
         matrices.pop()
 

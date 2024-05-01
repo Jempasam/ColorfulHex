@@ -1,11 +1,13 @@
 package jempasam.hexpigmentplus.recipe
 
-import net.minecraft.util.registry.Registry
+import net.minecraft.registry.Registries
+import net.minecraft.registry.Registry
+
 
 object HPPRecipes {
     init{
         println("Custom Recipe Type"+HatShapedRecipe.IDENTIFIER)
-        Registry.register(Registry.RECIPE_TYPE, HatShapedRecipe.IDENTIFIER, HatShapedRecipe.Type)
-        Registry.register(Registry.RECIPE_SERIALIZER, HatShapedRecipe.IDENTIFIER, HatShapedRecipe.Serializer)
+        Registry.register(Registries.RECIPE_TYPE, HatShapedRecipe.IDENTIFIER, HatShapedRecipe.Type)
+        Registry.register(Registries.RECIPE_SERIALIZER, HatShapedRecipe.IDENTIFIER, HatShapedRecipe.Serializer)
     }
 }
