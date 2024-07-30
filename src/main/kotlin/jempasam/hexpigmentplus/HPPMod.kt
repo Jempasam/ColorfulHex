@@ -13,7 +13,7 @@ object HPPMod : ModInitializer {
 	operator fun div(s: String) = Identifier(MODID, s)
 
 	override fun onInitialize() {
-		logger.info("Colorful hex start!")
+		logger.info("Hex pigment plus start!")
 		HPPItems
 		HPPRecipes
 	}

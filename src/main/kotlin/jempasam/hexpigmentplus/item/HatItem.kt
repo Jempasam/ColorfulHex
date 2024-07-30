@@ -1,14 +1,17 @@
 package jempasam.hexpigmentplus.item
 
+import jempasam.hexpigmentplus.CItemTags
+import jempasam.hexpigmentplus.CSlotType
+import jempasam.hexpigmentplus.CSlotTypes
+import jempasam.hexpigmentplus.MultiStackCreative
+import jempasam.hexpigmentplus.item.HPPItems.magicianHat
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
-import net.minecraft.item.ArmorItem
-import net.minecraft.item.ArmorMaterial
-import net.minecraft.item.ArmorMaterials
+import net.minecraft.item.*
 import net.minecraft.recipe.Ingredient
-import net.minecraft.registry.tag.ItemTags
 import net.minecraft.sound.SoundEvents
+import net.minecraft.util.collection.DefaultedList
 
-class HatItem(settings: FabricItemSettings): ArmorItem(Material, Type.HELMET, settings){
+class HatItem(settings: FabricItemSettings): ArmorItem(Material, CSlotTypes.HELMET, settings), MultiStackCreative{
 
     object Material: ArmorMaterial{
         override fun getEnchantability() = ArmorMaterials.GOLD.enchantability
@@ -17,14 +20,20 @@ class HatItem(settings: FabricItemSettings): ArmorItem(Material, Type.HELMET, se
 
         override fun getName() = "hat"
 
-        override fun getProtection(slot: Type) = ArmorMaterials.LEATHER.getProtection(slot)
+        override fun getProtectionAmount(slot: CSlotType) = ArmorMaterials.LEATHER.getProtectionAmount(slot)
 
         override fun getToughness() = ArmorMaterials.LEATHER.toughness
 
-        override fun getRepairIngredient() = Ingredient.fromTag(ItemTags.WOOL)
+        override fun getRepairIngredient() = Ingredient.fromTag(CItemTags.WOOL)
 
-        override fun getDurability(slot: Type) = ArmorMaterials.LEATHER.getDurability(slot)
+        override fun getDurability(slot: CSlotType) = ArmorMaterials.LEATHER.getDurability(slot)
 
         override fun getKnockbackResistance() = ArmorMaterials.LEATHER.knockbackResistance
+    }
+
+    override fun getStack() = List(7){ magicianHat.defaultStack.copy().apply { this.orCreateNbt.putInt("CustomModelData",it) } }
+
+    override fun appendStacks(group: ItemGroup, stacks: DefaultedList<ItemStack>) {
+        if(isIn(group))getStack().forEach { stacks.add(it) }
     }
 }

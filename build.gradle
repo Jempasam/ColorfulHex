@@ -90,7 +90,6 @@ dependencies {
 	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-api:$cardinalComponentsVersion"
 	modImplementation "at.petra-k.paucal:paucal-fabric-$minecraft_version:$paucalVersion"
 	modImplementation "vazkii.patchouli:Patchouli:$minecraft_version-$patchouliVersion-FABRIC"
-	modRuntimeOnly "jempasam.colorful_hex:serialization-hooks:0.4.99999"
 	modImplementation("at.petra-k.hexcasting:hexcasting-fabric-$minecraft_version:$hexcastingVersion"){
 		exclude module: "phosphor"
 	}

@@ -2,31 +2,30 @@ package jempasam.hexpigmentplus.recipe
 
 import com.google.gson.JsonObject
 import jempasam.hexpigmentplus.HPPMod
-import net.minecraft.inventory.RecipeInputInventory
+import jempasam.hexpigmentplus.RecipeInventory
 import net.minecraft.item.ItemStack
 import net.minecraft.network.PacketByteBuf
 import net.minecraft.recipe.CraftingRecipe
 import net.minecraft.recipe.RecipeSerializer
 import net.minecraft.recipe.RecipeType
 import net.minecraft.recipe.ShapedRecipe
-import net.minecraft.registry.DynamicRegistryManager
 import net.minecraft.util.Identifier
 import net.minecraft.util.JsonHelper
 import net.minecraft.world.World
 
 class HatShapedRecipe(val model: Int, val recipe: ShapedRecipe): CraftingRecipe{
-    override fun matches(inventory: RecipeInputInventory, world: World) = recipe.matches(inventory,world)
+    override fun matches(inventory: RecipeInventory, world: World) = recipe.matches(inventory,world)
 
-    override fun craft(inventory: RecipeInputInventory, registries: DynamicRegistryManager): ItemStack {
-        val ret=recipe.craft(inventory,registries)
+    override fun craft(inventory: RecipeInventory/*, registries: DynamicRegistryManager*/): ItemStack {
+        val ret=recipe.craft(inventory/*,registries*/)
         ret.orCreateNbt.putInt("CustomModelData",model)
         return ret
     }
 
     override fun fits(width: Int, height: Int) = recipe.fits(width,height)
 
-    override fun getOutput(registries: DynamicRegistryManager): ItemStack {
-        val ret=recipe.getOutput(registries)
+    override fun getOutput(/*registries: DynamicRegistryManager*/): ItemStack {
+        val ret=recipe.getOutput(/*registries*/)
         ret.orCreateNbt.putInt("CustomModelData",model)
         return ret
     }
@@ -37,7 +36,7 @@ class HatShapedRecipe(val model: Int, val recipe: ShapedRecipe): CraftingRecipe{
 
     override fun getIngredients() = recipe.ingredients
 
-    override fun getRemainder(inventory: RecipeInputInventory) = recipe.getRemainder(inventory)
+    override fun getRemainder(inventory: RecipeInventory) = recipe.getRemainder(inventory)
 
     override fun createIcon() = recipe.createIcon()
 
@@ -45,7 +44,7 @@ class HatShapedRecipe(val model: Int, val recipe: ShapedRecipe): CraftingRecipe{
 
     override fun toString() = recipe.toString()
 
-    override fun getCategory() = recipe.category
+    //override fun getCategory() = recipe.category
 
     override fun isIgnoredInRecipeBook() = recipe.isIgnoredInRecipeBook
 
