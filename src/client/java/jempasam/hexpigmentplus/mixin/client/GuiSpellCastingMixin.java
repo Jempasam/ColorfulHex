@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(GuiSpellcasting.class)
 public class GuiSpellCastingMixin {
-	@Redirect(method = "render", at = @At(value = "INVOKE", target = "Lat/petrak/hexcasting/api/spell/casting/ResolvedPatternType;getColor()I"), remap = false)
+	@Redirect(method = "render", at = @At(value = "INVOKE", target = "Lat/petrak/hexcasting/api/spell/casting/ResolvedPatternType;getColor()I"))
 	public int render_color(ResolvedPatternType type) {
 		//if(!HexlinkClientConfig.INSTANCE.getColored_casting())return type.getColor();
 		if(type==ResolvedPatternType.EVALUATED){

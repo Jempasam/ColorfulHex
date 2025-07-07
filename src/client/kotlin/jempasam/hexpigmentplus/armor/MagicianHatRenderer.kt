@@ -44,6 +44,10 @@ class MagicianHatRenderer: ArmorRenderer {
         val color2=colorizer.getColor((entity.age.toFloat()+15)*3,entity.pos.multiply(0.1))
         val color3=colorizer.getColor((entity.age.toFloat()+30)*3,entity.pos.multiply(0.1))
         val color4=colorizer.getColor((entity.age.toFloat()+45)*3,entity.pos.multiply(0.1))
+        val color5=colorizer.getColor((entity.age.toFloat()+60)*3,entity.pos.multiply(0.1))
+
+        val headpos=contextModel.head.transform
+        val pi= Math.PI.toFloat()
 
         // Vertexs
         val vertexs = ItemRenderer.getArmorGlintConsumer(
@@ -51,17 +55,29 @@ class MagicianHatRenderer: ArmorRenderer {
         )
 
         matrices.push()
-        matrices.multiply(Quaternion.fromEulerXyz(contextModel.head.roll, contextModel.head.yaw+Math.PI.toFloat()/2f, contextModel.head.pitch))
-        matrices.multiply(Quaternion.fromEulerXyz(Math.PI.toFloat(), -Math.PI.toFloat()/2f, 0f))
-        matrices.scale(0.65f, 0.65f, 0.65f)
-        matrices.translate(-.5, 0.0, -.5)
+
+        // Headpos
+        matrices.multiply(Quaternion.fromEulerXyz(headpos.roll, headpos.yaw+pi/2, headpos.pitch))
+        matrices.translate(headpos.pivotX.toDouble()/10, headpos.pivotY.toDouble()/10, headpos.pivotZ.toDouble()/10)
 
 
-        matrices.translate(translation.x.toDouble(), translation.y.toDouble(), translation.z.toDouble())
-        matrices.translate(0.5, 0.5, 0.5)
-        matrices.scale(scale.x, scale.y, scale.z)
-        matrices.multiply(Quaternion.fromEulerXyz(rotation.x-Math.PI.toFloat()/2f, rotation.y, rotation.z))
+        // Position correction
+        matrices.translate(0.0, -0.4*0.625f, 0.0)
+        matrices.scale(0.625f,0.625f,0.625f)
+        matrices.multiply(Quaternion.fromEulerXyz(0f,-pi/2,pi))
         matrices.translate(-0.5, -0.5, -0.5)
+
+        // Model Pos
+        matrices.translate(translation.x.toDouble(), translation.y.toDouble(), translation.z.toDouble())
+        matrices.translate(0.5,0.5,0.5)
+        matrices.scale(scale.x, scale.y, scale.z)
+        matrices.multiply(Quaternion.fromEulerXyz(rotation.x*pi*2/360, rotation.y*pi*2/360, rotation.z*pi*2/360))
+        matrices.translate(-0.5,-0.5,-0.5)
+
+        /*
+        matrices.translate(0.5, 0.5, 0.5)
+        matrices.multiply(Quaternion.fromEulerXyz(rotation.x-Math.PI.toFloat()/2f, rotation.y, rotation.z))
+        matrices.translate(-0.5, -0.5, -0.5)*/
         val matrix=matrices.peek()
         matrices.pop()
 
@@ -72,6 +88,7 @@ class MagicianHatRenderer: ArmorRenderer {
                 1 -> color2
                 2 -> color3
                 3 -> color4
+                4 -> color5
                 else->DyeColor.WHITE.signColor
             }
             vertexs.quad(

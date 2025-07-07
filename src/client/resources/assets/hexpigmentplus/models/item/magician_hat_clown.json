@@ -169,7 +169,7 @@
 			"to": [9.75, 8.35, -1.15],
 			"rotation": {"angle": -22.5, "axis": "x", "origin": [7.5, 6.25, -2.25]},
 			"faces": {
-				"north": {"uv": [13.5, 4.5, 10.5, 7.5], "rotation": 270, "texture": "#all", "tintindex": 3},
+				"north": {"uv": [13.5, 4.5, 10.5, 7.5], "rotation": 270, "texture": "#all"},
 				"east": {"uv": [10.5, 7.5, 13.45, 4.5], "rotation": 270, "texture": "#all"},
 				"south": {"uv": [10.5, 4.5, 13.45, 7.45], "rotation": 270, "texture": "#all"},
 				"west": {"uv": [10.5, 7.5, 13.45, 4.5], "rotation": 90, "texture": "#all"},

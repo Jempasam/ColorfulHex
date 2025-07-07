@@ -1,5 +1,6 @@
 package jempasam.hexpigmentplus.item
 
+import at.petrak.hexcasting.api.utils.getInt
 import jempasam.hexpigmentplus.CItemTags
 import jempasam.hexpigmentplus.CSlotType
 import jempasam.hexpigmentplus.CSlotTypes
@@ -9,6 +10,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.item.*
 import net.minecraft.recipe.Ingredient
 import net.minecraft.sound.SoundEvents
+import net.minecraft.text.Text
 import net.minecraft.util.collection.DefaultedList
 
 class HatItem(settings: FabricItemSettings): ArmorItem(Material, CSlotTypes.HELMET, settings), MultiStackCreative{
@@ -31,7 +33,9 @@ class HatItem(settings: FabricItemSettings): ArmorItem(Material, CSlotTypes.HELM
         override fun getKnockbackResistance() = ArmorMaterials.LEATHER.knockbackResistance
     }
 
-    override fun getStack() = List(7){ magicianHat.defaultStack.copy().apply { this.orCreateNbt.putInt("CustomModelData",it) } }
+    override fun getStack() = List(11){ magicianHat.defaultStack.copy().apply { this.orCreateNbt.putInt("CustomModelData",it) } }
+
+    override fun getName(stack: ItemStack) = Text.translatable("$translationKey.${stack.nbt.getInt("CustomModelData",0)}")
 
     override fun appendStacks(group: ItemGroup, stacks: DefaultedList<ItemStack>) {
         if(isIn(group))getStack().forEach { stacks.add(it) }
