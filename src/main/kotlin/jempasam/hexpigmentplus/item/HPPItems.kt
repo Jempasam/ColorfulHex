@@ -1,6 +1,5 @@
 package jempasam.hexpigmentplus.item
 
-import at.petrak.hexcasting.xplat.IXplatAbstractions
 import jempasam.hexpigmentplus.CRegistry
 import jempasam.hexpigmentplus.HPPMod
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
@@ -13,5 +12,5 @@ object HPPItems {
         return item
     }
 
-    val magicianHat= register("magician_hat", HatItem(FabricItemSettings().group(IXplatAbstractions.INSTANCE.tab)))
+    val magicianHat= register("magician_hat", HatItem(FabricItemSettings()))
 }

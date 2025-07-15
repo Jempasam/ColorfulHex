@@ -1,7 +1,7 @@
 plugins {
-	id 'fabric-loom' version '1.5-SNAPSHOT'
+	id 'fabric-loom' version "${loom_version}"
 	id 'maven-publish'
-    id "org.jetbrains.kotlin.jvm" version "1.9.0"
+    id "org.jetbrains.kotlin.jvm" version "2.0.21"
 }
 
 version = project.mod_version
@@ -57,6 +57,7 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+	mavenLocal()
 	maven { url "https://maven.shedaniel.me" }
 	mavenCentral()
 }
@@ -88,9 +89,11 @@ dependencies {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
 	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-api:$cardinalComponentsVersion"
-	modImplementation "at.petra-k.paucal:paucal-fabric-$minecraft_version:$paucalVersion"
+	modImplementation "maven.modrinth:paucal:$paucalVersion"
 	modImplementation "vazkii.patchouli:Patchouli:$minecraft_version-$patchouliVersion-FABRIC"
-	modImplementation("at.petra-k.hexcasting:hexcasting-fabric-$minecraft_version:$hexcastingVersion"){
+	modImplementation("maven.modrinth:inline:$inlineVersion-fabric")
+	modLocalRuntime files("$rootProject.rootDir/lib/serialization-hooks-0.4.99999.jar")
+	modImplementation("maven.modrinth:hex-casting:$hexcastingVersion"){
 		exclude module: "phosphor"
 	}
 }
@@ -105,19 +108,19 @@ processResources {
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 	kotlinOptions {
-		jvmTarget = 17
+		jvmTarget = 21
 	}
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 17
+	it.options.release = 21
 }
 
 java {
 	withSourcesJar()
 
-	sourceCompatibility = JavaVersion.VERSION_17
-	targetCompatibility = JavaVersion.VERSION_17
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
 }
 
 jar {

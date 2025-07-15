@@ -9,23 +9,25 @@ import net.minecraft.recipe.CraftingRecipe
 import net.minecraft.recipe.RecipeSerializer
 import net.minecraft.recipe.RecipeType
 import net.minecraft.recipe.ShapedRecipe
+import net.minecraft.registry.DynamicRegistryManager
 import net.minecraft.util.Identifier
 import net.minecraft.util.JsonHelper
 import net.minecraft.world.World
 
 class HatShapedRecipe(val model: Int, val recipe: ShapedRecipe): CraftingRecipe{
+
     override fun matches(inventory: RecipeInventory, world: World) = recipe.matches(inventory,world)
 
-    override fun craft(inventory: RecipeInventory/*, registries: DynamicRegistryManager*/): ItemStack {
-        val ret=recipe.craft(inventory/*,registries*/)
+    override fun craft(inventory: RecipeInventory, registries: DynamicRegistryManager): ItemStack {
+        val ret=recipe.craft(inventory,registries)
         ret.orCreateNbt.putInt("CustomModelData",model)
         return ret
     }
 
     override fun fits(width: Int, height: Int) = recipe.fits(width,height)
 
-    override fun getOutput(/*registries: DynamicRegistryManager*/): ItemStack {
-        val ret=recipe.getOutput(/*registries*/)
+    override fun getOutput(registries: DynamicRegistryManager): ItemStack {
+        val ret=recipe.getOutput(registries)
         ret.orCreateNbt.putInt("CustomModelData",model)
         return ret
     }
@@ -33,6 +35,8 @@ class HatShapedRecipe(val model: Int, val recipe: ShapedRecipe): CraftingRecipe{
     override fun getType() = recipe.type
 
     override fun getGroup() = recipe.group
+
+    override fun getCategory() = recipe.category
 
     override fun getIngredients() = recipe.ingredients
 

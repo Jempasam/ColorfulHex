@@ -1,21 +1,22 @@
 // This file is redefined for all minecraft versions
 package jempasam.hexpigmentplus
 
-import at.petrak.hexcasting.api.misc.FrozenColorizer
+import at.petrak.hexcasting.api.pigment.FrozenPigment
 import net.minecraft.entity.EquipmentSlot
-import net.minecraft.inventory.CraftingInventory
+import net.minecraft.inventory.RecipeInputInventory
 import net.minecraft.item.ItemStack
-import net.minecraft.tag.ItemTags
+import net.minecraft.registry.Registries
+import net.minecraft.registry.Registry
+import net.minecraft.registry.tag.ItemTags
 import net.minecraft.util.Identifier
-import net.minecraft.util.registry.Registry
 
 
 // Registry Compat Hooks
 object CRegistry {
 
-    val ITEM= Registry.ITEM
-    val RECIPE_TYPE= Registry.RECIPE_TYPE
-    val RECIPE_SERIALIZER= Registry.RECIPE_SERIALIZER
+    val ITEM= Registries.ITEM
+    val RECIPE_TYPE= Registries.RECIPE_TYPE
+    val RECIPE_SERIALIZER= Registries.RECIPE_SERIALIZER
 
     fun<T> register(reg: Registry<T>, id: Identifier, value: T) = Registry.register(reg,id,value)
 }
@@ -35,7 +36,7 @@ interface MultiStackCreative{
 }
 
 // Recipe
-typealias RecipeInventory= CraftingInventory
+typealias RecipeInventory= RecipeInputInventory
 
 //Pigment
-typealias CFrozenPigment= FrozenColorizer
+typealias CFrozenPigment= FrozenPigment

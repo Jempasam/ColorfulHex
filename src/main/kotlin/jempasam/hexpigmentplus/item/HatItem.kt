@@ -2,18 +2,18 @@ package jempasam.hexpigmentplus.item
 
 import at.petrak.hexcasting.api.utils.getInt
 import jempasam.hexpigmentplus.CItemTags
-import jempasam.hexpigmentplus.CSlotType
-import jempasam.hexpigmentplus.CSlotTypes
 import jempasam.hexpigmentplus.MultiStackCreative
 import jempasam.hexpigmentplus.item.HPPItems.magicianHat
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
-import net.minecraft.item.*
+import net.minecraft.item.ArmorItem
+import net.minecraft.item.ArmorMaterial
+import net.minecraft.item.ArmorMaterials
+import net.minecraft.item.ItemStack
 import net.minecraft.recipe.Ingredient
 import net.minecraft.sound.SoundEvents
 import net.minecraft.text.Text
-import net.minecraft.util.collection.DefaultedList
 
-class HatItem(settings: FabricItemSettings): ArmorItem(Material, CSlotTypes.HELMET, settings), MultiStackCreative{
+class HatItem(settings: FabricItemSettings): ArmorItem(Material, Type.HELMET, settings), MultiStackCreative{
 
     object Material: ArmorMaterial{
         override fun getEnchantability() = ArmorMaterials.GOLD.enchantability
@@ -22,13 +22,13 @@ class HatItem(settings: FabricItemSettings): ArmorItem(Material, CSlotTypes.HELM
 
         override fun getName() = "hat"
 
-        override fun getProtectionAmount(slot: CSlotType) = ArmorMaterials.LEATHER.getProtectionAmount(slot)
+        override fun getProtection(type: Type?): Int = ArmorMaterials.LEATHER.getProtection(type)
+
+        override fun getDurability(type: Type?): Int = ArmorMaterials.LEATHER.getDurability(type)
 
         override fun getToughness() = ArmorMaterials.LEATHER.toughness
 
         override fun getRepairIngredient() = Ingredient.fromTag(CItemTags.WOOL)
-
-        override fun getDurability(slot: CSlotType) = ArmorMaterials.LEATHER.getDurability(slot)
 
         override fun getKnockbackResistance() = ArmorMaterials.LEATHER.knockbackResistance
     }
@@ -37,7 +37,4 @@ class HatItem(settings: FabricItemSettings): ArmorItem(Material, CSlotTypes.HELM
 
     override fun getName(stack: ItemStack) = Text.translatable("$translationKey.${stack.nbt.getInt("CustomModelData",0)}")
 
-    override fun appendStacks(group: ItemGroup, stacks: DefaultedList<ItemStack>) {
-        if(isIn(group))getStack().forEach { stacks.add(it) }
-    }
 }
