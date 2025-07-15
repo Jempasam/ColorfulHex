@@ -54,17 +54,23 @@ class MagicianHatRenderer: ArmorRenderer {
         val head = contextModel.head
         val pi = Math.PI.toFloat()
 
+
+        //// HEAD TRANSFORMATION ////
         matrices.push()
         matrices.multiply(Quaternionf().rotateZYX(contextModel.head.roll, contextModel.head.yaw, contextModel.head.pitch))
-        matrices.multiply(Quaternionf().rotateZYX(Math.PI.toFloat(), -Math.PI.toFloat()/2f, 0f))
+        matrices.translate(-.5f, -.75f, -.5f)
+        matrices.translate(.5f,.5f,.5f)
         matrices.scale(0.65f, 0.65f, 0.65f)
-        matrices.translate(-.8, -.6, -.5)
+        matrices.multiply(Quaternionf().rotateZYX(pi,0f,0f))
+        matrices.translate(-.5f,-.5f,-.5f)
 
-        matrices.translate(0.5, 0.5, 0.5)
-        matrices.scale(scale.x, scale.y, scale.z)
-        matrices.multiply(Quaternionf().rotateZYX(-rotation.x+Math.PI.toFloat()/2, rotation.y+Math.PI.toFloat()/2, rotation.z))
-        matrices.translate(-0.5, -0.5, -0.5)
+        //// MODEL TRANSFORMATION ////
         matrices.translate(translation.x.toDouble(), translation.y.toDouble(), translation.z.toDouble())
+        matrices.translate(.5f, .5f, .5f)
+        matrices.scale(scale.x, scale.y, scale.z)
+        matrices.multiply(Quaternionf().rotateZYX(rotation.z*0.017453292F, rotation.y*0.017453292F, rotation.x*0.017453292F))
+        matrices.translate(-.5f, -.5f, -.5f)
+
         val matrix=matrices.peek()
         matrices.pop()
 

@@ -33,7 +33,7 @@ class HatItem(settings: FabricItemSettings): ArmorItem(Material, Type.HELMET, se
         override fun getKnockbackResistance() = ArmorMaterials.LEATHER.knockbackResistance
     }
 
-    override fun getStack() = List(11){ magicianHat.defaultStack.copy().apply { this.orCreateNbt.putInt("CustomModelData",it) } }
+    override fun getStack() = List(14){ magicianHat.defaultStack.copy().apply { this.orCreateNbt.putInt("CustomModelData",it) } }
 
     override fun getName(stack: ItemStack) = Text.translatable("$translationKey.${stack.nbt.getInt("CustomModelData",0)}")
 

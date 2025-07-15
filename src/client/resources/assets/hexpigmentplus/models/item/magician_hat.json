@@ -121,9 +121,11 @@
 		{ "predicate": { "custom_model_data": 8 }, "model": "hexpigmentplus:item/magician_hat_fairy" },
 		{ "predicate": { "custom_model_data": 9 }, "model": "hexpigmentplus:item/magician_hat_cube" },
 		{ "predicate": { "custom_model_data":10 }, "model": "hexpigmentplus:item/magician_hat_magic" },
+		{ "predicate": { "custom_model_data":11 }, "model": "hexpigmentplus:item/magician_hat_wide" },
+		{ "predicate": { "custom_model_data":12 }, "model": "hexpigmentplus:item/magician_hat_falling" },
+		{ "predicate": { "custom_model_data":13 }, "model": "hexpigmentplus:item/magician_hat_crooked" },
 		
-		{ "predicate": { "custom_model_data":11 }, "model": "hexpigmentplus:item/magician_hat_cube_left" },
-		{ "predicate": { "custom_model_data":12 }, "model": "hexpigmentplus:item/magician_hat_cube_forward" }
-		
+		{ "predicate": { "custom_model_data":14 }, "model": "hexpigmentplus:item/magician_hat_cube_left" },
+		{ "predicate": { "custom_model_data":15 }, "model": "hexpigmentplus:item/magician_hat_cube_forward" }
 	]
 }
