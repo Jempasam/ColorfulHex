@@ -1,0 +1,21 @@
+{
+  "type": "hexpigmentplus:hat_shaped",
+  "pattern": [
+    "OO ",
+    " O#",
+    "OOO"
+  ],
+  "key": {
+    "#": {
+      "item": "hexcasting:dye_colorizer_white"
+    },
+    "O": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "result": {
+    "item": "hexpigmentplus:magician_hat",
+    "count": 1
+  },
+  "model": 13
+}

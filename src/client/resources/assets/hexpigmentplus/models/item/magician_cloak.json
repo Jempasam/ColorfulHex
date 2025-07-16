@@ -1,0 +1,105 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"particle": "hexpigmentplus:item/magician_cloak",
+		"all": "hexpigmentplus:item/magician_cloak"
+	},
+	"elements": [
+		{
+			"name": "0",
+			"from": [1, 17, 7],
+			"to": [15, 23, 9],
+			"faces": {
+				"north": {"uv": [10.5, 0, 16, 2], "texture": "#all", "tintindex": 0},
+				"east": {"uv": [8, 2.5, 9.5, 6.5], "texture": "#all", "tintindex": 1},
+				"south": {"uv": [0, 2.5, 9.5, 6.5], "texture": "#all", "tintindex": 0},
+				"west": {"uv": [0, 2.5, 1.5, 6.5], "texture": "#all", "tintindex": 1},
+				"up": {"uv": [0, 2.5, 9.5, 4], "rotation": 180, "texture": "#all", "tintindex": 1}
+			}
+		},
+		{
+			"name": "1",
+			"from": [1, 11, 7],
+			"to": [15, 17, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -6, 0]},
+			"faces": {
+				"north": {"uv": [10.5, 2, 16, 4.5], "texture": "#all", "tintindex": 1},
+				"east": {"uv": [8, 6.5, 9.5, 11], "texture": "#all", "tintindex": 1},
+				"south": {"uv": [0, 6.5, 9.5, 11], "texture": "#all", "tintindex": 1},
+				"west": {"uv": [0, 6.5, 1.5, 11], "texture": "#all", "tintindex": 1}
+			}
+		},
+		{
+			"name": "2",
+			"from": [1, 5, 7],
+			"to": [15, 11, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -12, 0]},
+			"faces": {
+				"north": {"uv": [10.5, 4.5, 16, 7], "texture": "#all", "tintindex": 2},
+				"east": {"uv": [8, 10, 9, 13.5], "texture": "#all", "tintindex": 2},
+				"south": {"uv": [0, 10, 9.5, 13.5], "texture": "#all", "tintindex": 2},
+				"west": {"uv": [0, 10, 1, 13.5], "texture": "#all", "tintindex": 2}
+			}
+		},
+		{
+			"name": "3",
+			"from": [1, 0, 7],
+			"to": [15, 5, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -18, 0]},
+			"faces": {
+				"north": {"uv": [10.5, 6, 16, 8], "texture": "#all", "tintindex": 3},
+				"east": {"uv": [8, 14, 9.5, 16], "texture": "#all", "tintindex": 3},
+				"south": {"uv": [0, 14, 9.5, 16], "texture": "#all", "tintindex": 3},
+				"west": {"uv": [0, 14, 1.5, 16], "texture": "#all", "tintindex": 3},
+				"down": {"uv": [0, 14.5, 9.5, 16], "texture": "#all", "tintindex": 3}
+			}
+		}
+	],
+	"overrides": [
+		{"predicate": {"custom_model_data": 1}, "model": "hexpigmentplus:item/magician_cloak_large"},
+		{"predicate": {"custom_model_data": 2}, "model": "hexpigmentplus:item/magician_cloak_scarf"}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [136.14, 66.34, -141.77],
+			"translation": [0.5, -1.5, -2],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [136.14, 66.34, -141.77],
+			"translation": [0.5, -1.5, -2],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [136.14, 66.34, -141.77],
+			"translation": [0.5, -1.5, -2],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_lefthand": {
+			"rotation": [136.14, 66.34, -141.77],
+			"translation": [0.5, -1.5, -2],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"ground": {
+			"rotation": [0, 0, -91],
+			"translation": [-1.25, 1, 0.75],
+			"scale": [0.26, 0.26, 0.26]
+		},
+		"gui": {
+			"rotation": [39.5, -30, 0],
+			"translation": [-0.25, -2.25, -1.25],
+			"scale": [0.68, 0.68, 0.68]
+		},
+		"head": {
+			"rotation": [-14.75, 0, 0],
+			"translation": [0, -26.5, 9],
+			"scale": [1.35, 1.35, 1.35]
+		},
+		"fixed": {
+			"rotation": [0, -180, 0],
+			"translation": [0, -2.5, -1.25],
+			"scale": [0.83, 0.83, 0.83]
+		}
+	}
+}

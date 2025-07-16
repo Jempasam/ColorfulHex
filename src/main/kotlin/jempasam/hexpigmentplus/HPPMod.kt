@@ -22,6 +22,7 @@ object HPPMod : ModInitializer {
 		HPPRecipes
 		ItemGroupEvents.modifyEntriesEvent(RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier(HexAPI.MOD_ID, "hexcasting"))).register{ event ->
 			HPPItems.magicianHat.getStack().forEach { event.add(it) }
+			HPPItems.magicianCloak.getStack().forEach { event.add(it) }
 		}
 	}
 

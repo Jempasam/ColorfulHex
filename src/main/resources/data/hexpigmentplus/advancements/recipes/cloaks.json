@@ -1,0 +1,29 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_leather": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:leather"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_leather"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hexpigmentplus:magician_cloak",
+      "hexpigmentplus:magician_cloak_large",
+      "hexpigmentplus:magician_cloak_scarf"
+    ]
+  }
+}
