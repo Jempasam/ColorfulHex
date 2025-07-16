@@ -72,6 +72,12 @@ loom {
 		}
 	}
 
+	runs{
+		client {
+			programArgs "--username", "samdemont06", "--uuid", "0e54f11f-14d7-47a7-b9a9-9c3fe54773d1"
+		}
+	}
+
 }
 
 dependencies {
