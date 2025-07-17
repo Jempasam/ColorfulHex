@@ -1,4 +1,5 @@
 {
+	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"textures": {
 		"particle": "hexpigmentplus:item/magician_hat",
@@ -75,6 +76,23 @@
 			}
 		}
 	],
+	"overrides": [
+		{"predicate": {"custom_model_data": 1}, "model": "hexpigmentplus:item/magician_hat_high"},
+		{"predicate": {"custom_model_data": 2}, "model": "hexpigmentplus:item/magician_hat_lutin"},
+		{"predicate": {"custom_model_data": 3}, "model": "hexpigmentplus:item/magician_hat_medieval"},
+		{"predicate": {"custom_model_data": 4}, "model": "hexpigmentplus:item/magician_hat_round"},
+		{"predicate": {"custom_model_data": 5}, "model": "hexpigmentplus:item/magician_hat_clown"},
+		{"predicate": {"custom_model_data": 6}, "model": "hexpigmentplus:item/magician_hat_big"},
+		{"predicate": {"custom_model_data": 7}, "model": "hexpigmentplus:item/magician_hat_cap"},
+		{"predicate": {"custom_model_data": 8}, "model": "hexpigmentplus:item/magician_hat_fairy"},
+		{"predicate": {"custom_model_data": 9}, "model": "hexpigmentplus:item/magician_hat_cube"},
+		{"predicate": {"custom_model_data": 10}, "model": "hexpigmentplus:item/magician_hat_magic"},
+		{"predicate": {"custom_model_data": 11}, "model": "hexpigmentplus:item/magician_hat_wide"},
+		{"predicate": {"custom_model_data": 12}, "model": "hexpigmentplus:item/magician_hat_falling"},
+		{"predicate": {"custom_model_data": 13}, "model": "hexpigmentplus:item/magician_hat_crooked"},
+		{"predicate": {"custom_model_data": 14}, "model": "hexpigmentplus:item/magician_hat_cube_left"},
+		{"predicate": {"custom_model_data": 15}, "model": "hexpigmentplus:item/magician_hat_cube_forward"}
+	],
 	"display": {
 		"thirdperson_righthand": {
 			"rotation": [33, 15, -45],
@@ -96,13 +114,13 @@
 			"translation": [3, 1.75, -2.5],
 			"scale": [0.55, 0.55, 0.55]
 		},
-		"gui": {
-			"rotation": [0, -142, 0],
-			"translation": [0, 0.75, 0],
-			"scale": [0.91, 0.94, 1]
-		},
 		"ground": {
 			"translation": [0, 5, 0]
+		},
+		"gui": {
+			"rotation": [30, -135, 0],
+			"translation": [0, 3, 0],
+			"scale": [0.8, 0.8, 0.8]
 		},
 		"head": {
 			"rotation": [8, 0, 0],
