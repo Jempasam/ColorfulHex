@@ -1,0 +1,7 @@
+{
+  "parent": "hexpigmentplus:item/collar/base",
+  "textures": {
+    "back": "hexpigmentplus:item/collar/simple",
+	"overlay": "hexpigmentplus:item/collar/simple_overlay"
+  }
+}
