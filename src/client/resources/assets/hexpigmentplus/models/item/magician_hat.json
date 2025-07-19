@@ -77,21 +77,24 @@
 		}
 	],
 	"overrides": [
-		{"predicate": {"custom_model_data": 1}, "model": "hexpigmentplus:item/magician_hat_high"},
-		{"predicate": {"custom_model_data": 2}, "model": "hexpigmentplus:item/magician_hat_lutin"},
-		{"predicate": {"custom_model_data": 3}, "model": "hexpigmentplus:item/magician_hat_medieval"},
-		{"predicate": {"custom_model_data": 4}, "model": "hexpigmentplus:item/magician_hat_round"},
-		{"predicate": {"custom_model_data": 5}, "model": "hexpigmentplus:item/magician_hat_clown"},
-		{"predicate": {"custom_model_data": 6}, "model": "hexpigmentplus:item/magician_hat_big"},
-		{"predicate": {"custom_model_data": 7}, "model": "hexpigmentplus:item/magician_hat_cap"},
-		{"predicate": {"custom_model_data": 8}, "model": "hexpigmentplus:item/magician_hat_fairy"},
-		{"predicate": {"custom_model_data": 9}, "model": "hexpigmentplus:item/magician_hat_cube"},
-		{"predicate": {"custom_model_data": 10}, "model": "hexpigmentplus:item/magician_hat_magic"},
-		{"predicate": {"custom_model_data": 11}, "model": "hexpigmentplus:item/magician_hat_wide"},
-		{"predicate": {"custom_model_data": 12}, "model": "hexpigmentplus:item/magician_hat_falling"},
-		{"predicate": {"custom_model_data": 13}, "model": "hexpigmentplus:item/magician_hat_crooked"},
-		{"predicate": {"custom_model_data": 14}, "model": "hexpigmentplus:item/magician_hat_cube_left"},
-		{"predicate": {"custom_model_data": 15}, "model": "hexpigmentplus:item/magician_hat_cube_forward"}
+		{"predicate": {"custom_model_data": 1}, "model": "hexpigmentplus:item/magician_hat/high"},
+		{"predicate": {"custom_model_data": 2}, "model": "hexpigmentplus:item/magician_hat/lutin"},
+		{"predicate": {"custom_model_data": 3}, "model": "hexpigmentplus:item/magician_hat/medieval"},
+		{"predicate": {"custom_model_data": 4}, "model": "hexpigmentplus:item/magician_hat/round"},
+		{"predicate": {"custom_model_data": 5}, "model": "hexpigmentplus:item/magician_hat/clown"},
+		{"predicate": {"custom_model_data": 6}, "model": "hexpigmentplus:item/magician_hat/big"},
+		{"predicate": {"custom_model_data": 7}, "model": "hexpigmentplus:item/magician_hat/cap"},
+		{"predicate": {"custom_model_data": 8}, "model": "hexpigmentplus:item/magician_hat/fairy"},
+		{"predicate": {"custom_model_data": 9}, "model": "hexpigmentplus:item/magician_hat/cube"},
+		{"predicate": {"custom_model_data": 10}, "model": "hexpigmentplus:item/magician_hat/magic"},
+		{"predicate": {"custom_model_data": 11}, "model": "hexpigmentplus:item/magician_hat/wide"},
+		{"predicate": {"custom_model_data": 12}, "model": "hexpigmentplus:item/magician_hat/falling"},
+		{"predicate": {"custom_model_data": 13}, "model": "hexpigmentplus:item/magician_hat/crooked"},
+		{"predicate": {"custom_model_data": 14}, "model": "hexpigmentplus:item/magician_hat/hay"},
+		{"predicate": {"custom_model_data": 15}, "model": "hexpigmentplus:item/magician_hat/bowl_hay"},
+
+		{"predicate": {"custom_model_data": 20}, "model": "hexpigmentplus:item/magician_hat/cube_left"},
+		{"predicate": {"custom_model_data": 21}, "model": "hexpigmentplus:item/magician_hat/cube_forward"}
 	],
 	"display": {
 		"thirdperson_righthand": {
@@ -127,23 +130,5 @@
 			"translation": [0, 15, 1.75],
 			"scale": [1.8, 1.8, 1.8]
 		}
-	},
-	"overrides": [
-		{ "predicate": { "custom_model_data": 1 }, "model": "hexpigmentplus:item/magician_hat_high" },
-		{ "predicate": { "custom_model_data": 2 }, "model": "hexpigmentplus:item/magician_hat_lutin" },
-		{ "predicate": { "custom_model_data": 3 }, "model": "hexpigmentplus:item/magician_hat_medieval" },
-		{ "predicate": { "custom_model_data": 4 }, "model": "hexpigmentplus:item/magician_hat_round" },
-		{ "predicate": { "custom_model_data": 5 }, "model": "hexpigmentplus:item/magician_hat_clown" },
-		{ "predicate": { "custom_model_data": 6 }, "model": "hexpigmentplus:item/magician_hat_big" },
-		{ "predicate": { "custom_model_data": 7 }, "model": "hexpigmentplus:item/magician_hat_cap" },
-		{ "predicate": { "custom_model_data": 8 }, "model": "hexpigmentplus:item/magician_hat_fairy" },
-		{ "predicate": { "custom_model_data": 9 }, "model": "hexpigmentplus:item/magician_hat_cube" },
-		{ "predicate": { "custom_model_data":10 }, "model": "hexpigmentplus:item/magician_hat_magic" },
-		{ "predicate": { "custom_model_data":11 }, "model": "hexpigmentplus:item/magician_hat_wide" },
-		{ "predicate": { "custom_model_data":12 }, "model": "hexpigmentplus:item/magician_hat_falling" },
-		{ "predicate": { "custom_model_data":13 }, "model": "hexpigmentplus:item/magician_hat_crooked" },
-		
-		{ "predicate": { "custom_model_data":14 }, "model": "hexpigmentplus:item/magician_hat_cube_left" },
-		{ "predicate": { "custom_model_data":15 }, "model": "hexpigmentplus:item/magician_hat_cube_forward" }
-	]
+	}
 }

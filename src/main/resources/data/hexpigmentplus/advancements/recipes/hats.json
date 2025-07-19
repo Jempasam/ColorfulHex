@@ -1,24 +1,17 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_wool": {
+    "has_items": {
       "conditions": {
         "items": [
-          {
-            "items": [
-              "minecraft:white_wool"
-            ]
-          }
+          { "items": [ "minecraft:white_wool" ] },
+          { "items": [ "hexcasting:dye_colorizer_white" ] }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     }
   },
-  "requirements": [
-    [
-      "has_wool"
-    ]
-  ],
+  "requirements": [ [ "has_items" ] ],
   "rewards": {
     "recipes": [
       "hexpigmentplus:magician_hat",

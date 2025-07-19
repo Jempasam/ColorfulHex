@@ -13,7 +13,7 @@ object HPPItems {
         return item
     }
 
-    val magicianHat= register("magician_hat", MagicianClothItem(FabricItemSettings(), ArmorItem.Type.HELMET, 14))
+    val magicianHat= register("magician_hat", MagicianClothItem(FabricItemSettings(), ArmorItem.Type.HELMET, 16))
 
     val magicianCloak= register("magician_cloak", MagicianClothItem(FabricItemSettings(), ArmorItem.Type.CHESTPLATE, 3))
 }

@@ -4,7 +4,7 @@
     "has_items": {
       "conditions": {
         "items": [
-          { "items": [ "minecraft:leather" ] },
+          { "items": [ "minecraft:wheat" ] },
           { "items": [ "hexcasting:dye_colorizer_white" ] }
         ]
       },
@@ -14,9 +14,8 @@
   "requirements": [ [ "has_items" ] ],
   "rewards": {
     "recipes": [
-      "hexpigmentplus:magician_cloak",
-      "hexpigmentplus:magician_cloak_large",
-      "hexpigmentplus:magician_cloak_scarf"
+      "hexpigmentplus:magician_hat_hay",
+      "hexpigmentplus:magician_hat_hay_bowl"
     ]
   }
 }

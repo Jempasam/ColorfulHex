@@ -1,9 +1,9 @@
 {
   "type": "hexpigmentplus:hat_shaped",
   "pattern": [
-    " 0#",
-    "000",
-    "0 "
+    " O#",
+    "OOO",
+    "O  "
   ],
   "key": {
     "#": {
